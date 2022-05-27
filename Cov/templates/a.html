@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <script src="../static/js/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+    <h1>outbreak traced</h1>
+    <div id="d1"></div>
+    <button id="b1">ajax Test</button>
+</body>
+    <script>
+        $("#b1").click(function () {
+            $.ajax({
+                url:"/ajaxtest",
+                type:"post",
+                data:{"name":"张三"},
+                success:function (d) {
+                    $("#d1").html(d)
+                },
+                error:function () {
+                    alert("请求失败")
+                }
+            })
+        })
+    </script>
+</html>
